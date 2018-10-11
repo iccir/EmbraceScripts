@@ -17,7 +17,7 @@ Several methods to invoke these scripts are available:
 
 1. Open `FadeOutSong.scpt` in Apple's Script Editor
 2. Click the Run button or menu item to run the script
-3. The current script will fade out
+3. The current song will fade out
 
 ### Export as Application
 
@@ -40,14 +40,15 @@ dialog should only appear once.
 "Open Embrace Scripts Folder"
 5. Copy `FadeOutSong.scpt` to the newly opened folder
 6. This adds a "FadeOutSong" menu item to the Script menu when Embrace is the current application
+7. When this menu item is selected, the current song will fade out
 
 ## Handlers
 
 A handler script is ran automatically by the application (in this case, Embrace) when certain events occur.
 
-Embrace currently supports a single event: "on metadata available". This event occurs once per track on startup, and once when a track is added to the Set List.
+Embrace currently supports a single event: `on metadata available`. This event occurs once per track on startup, and once when a track is added to the Set List.
 
-The `RedCortinas.scpt` file will automatically add a red label to Cortinas when they are added to the set list. This can be useful for tango DJs.
+The `RedCortinas.scpt` file automatically adds a red label to Cortinas when they are added to the set list. This can be useful for tango DJs.
 
 To set up the handler, do the following:
 
