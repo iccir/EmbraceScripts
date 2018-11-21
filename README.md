@@ -19,18 +19,6 @@ Several methods to invoke these scripts are available:
 2. Click the Run button or menu item to run the script
 3. The current song will fade out
 
-### Export as Application
-
-1. Open `FadeOutSong.scpt` in Apple's Script Editor
-2. Choose "File" and then "Export…" from the menu bar
-3. Select "Application" for File Format and "Ad-hoc Code Sign" for "Code Sign"
-4. Save the resulting app to your preferred location
-5. Each time the application is ran, the current song will fade out
-
-Note: Under macOS Mojave, a dialog will appear asking for automation access when
-`FadeOutSong.app` is first ran. As long as the application is code signed (via Step 3), this
-dialog should only appear once.
-
 ### Run from the Scripts menu
 
 1. Open Apple's Script Editor
@@ -41,6 +29,24 @@ dialog should only appear once.
 5. Copy `FadeOutSong.scpt` to the newly opened folder
 6. This adds a "FadeOutSong" menu item to the Script menu when Embrace is the current application
 7. When this menu item is selected, the current song will fade out
+
+### Export as Application
+
+1. Open `FadeOutSong.scpt` in Apple's Script Editor
+2. Choose "File" and then "Export…" from the menu bar
+3. Save the resulting app to your preferred location
+4. Each time the application is ran, the current song will fade out
+
+Note: Due to a bug in macOS Mojave, the resulting application needs to be code signed. To do so:
+
+1. Launch Terminal
+2. Type `xattr -cr `
+3. Drag in your script application and press return, the full command should look like this:
+`xattr -cr /Users/foo/Desktop/ExportedApplication.app`.
+4. Type `codesign --deep -s - `
+5. Drag in your script application and press return, the full command should look like this:
+`codesign --deep -s - /Users/foo/Desktop/ExportedApplication.app`.
+
 
 ## Handlers
 
